@@ -1,13 +1,13 @@
-# Amvera — конфигурация для Vite + React (Node.JS Browser)
-# Документация: https://docs.amvera.ru/applications/environments/nodejs-browser.html
-
 meta:
-  environment: node
+  environment: docker
   toolchain:
-    name: browser
-    version: 18
-
+    name: docker
 build:
-  # Vite собирает в dist/, а не build/ — указываем artifacts
-  artifacts:
-    "dist/*": /
+  dockerfile: Dockerfile
+  skip: false
+run:
+  image: null
+  command: null
+  args: null
+  persistenceMount: /data
+  containerPort: "80"
