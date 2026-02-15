@@ -246,7 +246,7 @@ const TelegramStarsCalculator \= () \=\> {
 
        {/\* 3\. Блок: ВЫБОР ИСТОЧНИКА И РАСЧЕТ \*/}  
        \<div\>  
-         \<h3 className\="font-bold text-slate-700 mb-3 ml-1"\>Выбор способа закупки\</h3\>  
+         \<h3 className\="font-bold text-slate-700 mb-3 ml-1"\>Выбор жи есть закупки\</h3\>  
          \<div className\="space-y-3"\>  
            {calculations.map((item) \=\> {  
              const isSelected \= selectedSourceId \=== item.id;  
