@@ -139,6 +139,27 @@ const TelegramStarsCalculator = () => {
       <div className="max-w-4xl mx-auto p-4 md:p-6 space-y-6">
         {/* 1. Блок: ПАРАМЕТРЫ ФРАГМЕНТА И ПРОДАЖИ */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white p-5 rounded-xl border border-indigo-100 ring-1 ring-indigo-50 shadow-sm">
+            <h3 className="font-bold text-slate-700 mb-4 flex items-center gap-2">
+              <Wallet className="w-5 h-5 text-indigo-500" />
+              Параметры продажи
+            </h3>
+            <div>
+              <label className="text-xs text-slate-500 block mb-1 uppercase font-semibold">
+                Цена продажи (за звезду)
+              </label>
+              <div className="relative">
+                <input
+                  type="number"
+                  value={sellingPrice}
+                  onChange={(e) => setSellingPrice(Number(e.target.value))}
+                  className="w-full p-2 pl-3 pr-10 border border-indigo-200 rounded-lg text-xl font-bold text-indigo-900 focus:ring-2 focus:ring-indigo-500 outline-none"
+                />
+                <span className="absolute right-3 top-3.5 text-slate-400 text-sm">₽</span>
+              </div>
+            </div>
+          </div>
+
           <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
             <h3 className="font-bold text-slate-700 mb-4 flex items-center gap-2">
               <Coins className="w-5 h-5 text-blue-500" />
@@ -167,27 +188,6 @@ const TelegramStarsCalculator = () => {
             </div>
             <div className="mt-2 text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded inline-block">
               Себестоимость: {(fragmentBatchCost / fragmentBatchSize).toFixed(4)} TON / звезда
-            </div>
-          </div>
-
-          <div className="bg-white p-5 rounded-xl border border-indigo-100 ring-1 ring-indigo-50 shadow-sm">
-            <h3 className="font-bold text-slate-700 mb-4 flex items-center gap-2">
-              <Wallet className="w-5 h-5 text-indigo-500" />
-              Параметры продажи
-            </h3>
-            <div>
-              <label className="text-xs text-slate-500 block mb-1 uppercase font-semibold">
-                Цена продажи (за звезду)
-              </label>
-              <div className="relative">
-                <input
-                  type="number"
-                  value={sellingPrice}
-                  onChange={(e) => setSellingPrice(Number(e.target.value))}
-                  className="w-full p-2 pl-3 pr-10 border border-indigo-200 rounded-lg text-xl font-bold text-indigo-900 focus:ring-2 focus:ring-indigo-500 outline-none"
-                />
-                <span className="absolute right-3 top-3.5 text-slate-400 text-sm">₽</span>
-              </div>
             </div>
           </div>
         </div>
@@ -243,7 +243,7 @@ const TelegramStarsCalculator = () => {
 
         {/* 3. Блок: ВЫБОР ИСТОЧНИКА И РАСЧЕТ */}
         <div>
-          <h3 className="font-bold text-slate-700 mb-3 ml-1">Выбор способа закупки</h3>
+          <h3 className="font-bold text-slate-700 mb-3 ml-1">Выбор жи есть закупки</h3>
           <div className="space-y-3">
             {calculations.map((item) => {
               const isSelected = selectedSourceId === item.id
